@@ -2,7 +2,7 @@
 
 This repository is used to create VM's in vSphere from template
 
-create ```terraform.tvars``` using [terraform.tvars_example](https://github.com/vavuthu/terraform/vsphere/terraform.tvars_example) 
+create ```terraform.tvars``` using [terraform.tvars_example](https://github.com/vavuthu/terraform/blob/main/vsphere/terraform.tvars_example) 
 
 Initialize terraform
 ```bash
