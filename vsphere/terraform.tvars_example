@@ -1,0 +1,26 @@
+// Name of the vSphere server. 
+vsphere_server = "vcenter-changme.com"
+
+// User on the vSphere server.
+vsphere_user = "Administrator@vsphere.local"
+
+// Password of the user on the vSphere server.
+vsphere_password = "ChangeMe"
+
+// Name of the vSphere cluster.
+vsphere_cluster = "Cluster-1"
+
+// Name of the vSphere data center.
+vsphere_datacenter = "Datacenter-1"
+
+// Name of the vSphere data store to use for the VMs.
+vsphere_datastore = "vsanDatastore"
+
+// Name of the VM template to clone to create VMs for the cluster.
+vm_template = "VM_template_name"
+
+// Network for VM to connect
+network_name = "VM Network"
+
+// Name of the VM
+vsphere_virtual_machine_name = "test-vj"
