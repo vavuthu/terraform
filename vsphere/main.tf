@@ -15,13 +15,8 @@ data "vsphere_datastore" "datastore" {
   
 }
 
-data "vsphere_resource_pool" "pool" {
-  name          = "Cluster-1/Resources"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
-}
-
 data "vsphere_compute_cluster" "compute_cluster" {
-  name          = "Cluster-1"
+  name          = var.vsphere_cluster
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
@@ -37,8 +32,8 @@ data "vsphere_virtual_machine" "template" {
 }
 
 resource "vsphere_virtual_machine" "vm" {
-    name                    = "test-vj"
-    resource_pool_id        = "${data.vsphere_resource_pool.pool.id}"
+    name                    = "${var.vsphere_virtual_machine_name}"
+    resource_pool_id        = data.vsphere_compute_cluster.compute_cluster.resource_pool_id
     datastore_id            = "${data.vsphere_datastore.datastore.id}"
 
     num_cpus                = 12
@@ -62,5 +57,5 @@ resource "vsphere_virtual_machine" "vm" {
 
         
     }
-  
+
 }

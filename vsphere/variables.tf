@@ -38,6 +38,12 @@ variable "vm_template" {
 
 variable "vm_network" {
   type        = string
-  description = "This is the name of the publicly accessible network for cluster ingress and access."
+  description = "This is the name of the publicly accessible network for VM."
   default     = "VM Network"
+}
+
+# the name of the vsphere virtual machine that is created. empty by default.
+variable "vsphere_virtual_machine_name" {
+  type        = string
+  description = "This is the name of the VM."
 }
