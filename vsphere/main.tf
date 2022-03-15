@@ -36,11 +36,6 @@ data "vsphere_virtual_machine" "template" {
   datacenter_id             = "${data.vsphere_datacenter.dc.id}"
 }
 
-# data "vsphere_host" "host" {
-#   name          = "10.70.39.3"
-#   datacenter_id = data.vsphere_datacenter.dc.id
-# }
-
 resource "vsphere_virtual_machine" "vm" {
     name                    = "test-vj"
     resource_pool_id        = "${data.vsphere_resource_pool.pool.id}"
