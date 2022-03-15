@@ -36,10 +36,10 @@ data "vsphere_virtual_machine" "template" {
   datacenter_id             = "${data.vsphere_datacenter.dc.id}"
 }
 
-data "vsphere_host" "host" {
-  name          = "10.1.160.15"
-  datacenter_id = data.vsphere_datacenter.dc.id
-}
+# data "vsphere_host" "host" {
+#   name          = "10.70.39.3"
+#   datacenter_id = data.vsphere_datacenter.dc.id
+# }
 
 resource "vsphere_virtual_machine" "vm" {
     name                    = "test-vj"
@@ -69,17 +69,3 @@ resource "vsphere_virtual_machine" "vm" {
     }
   
 }
-
-# resource "vsphere_virtual_machine" "vmFromRemoteOvf" {
-#   name                       = "vm2"
-#   resource_pool_id           = data.vsphere_resource_pool.pool.id
-#   datastore_id               = data.vsphere_datastore.datastore.id
-#   host_system_id             = data.vsphere_host.host.id
-#   wait_for_guest_net_timeout = 0
-#   wait_for_guest_ip_timeout  = 0
-#   datacenter_id              = data.vsphere_datacenter.dc.id
-#   ovf_deploy {
-#     // Url to remote ovf/ova file
-#     remote_ovf_url = "https://rhcos-redirector.apps.art.xq1c.p1.openshiftapps.com/art/storage/releases/rhcos-4.8/48.84.202105190318-0/x86_64/rhcos-48.84.202105190318-0-vmware.x86_64.ova"
-#   }
-# }
